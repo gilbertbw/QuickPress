@@ -1,0 +1,47 @@
+<html>
+<head>
+    <!--Load Jqueary and Moment-->
+    <script type="text/javascript" src="jqueary.js"></script>
+    <script type="text/javascript" src="moment.js"></script>
+    <link type="text/css" href="main.css" rel="stylesheet">
+    <script type="text/javascript">
+        var i = 0;
+        var start, best, statement;
+        best = null;
+        statement = "1000th's of a second"
+        function game(){
+            $("#unit").text(statement)
+            $("#best").removeClass("red");
+            if(i==0){
+                start = moment();
+                $(".button").val("Finish")
+                i++;
+            }else{
+                var end = moment();
+                var time = end-start;
+
+                $(".button").val("Start")
+                console.log(time);
+                $("#time").text(time);
+                if (best == null || best > time) {
+                    $("#best").text(time).addClass("red")
+                    $("#unit").text("new high score!")
+                    best = time;
+                }
+                i = 0;
+            }
+        }
+//        window.onload = function(){
+//            refresh()
+//        };
+    </script>
+</head>
+<body>
+<div class="center"><p class="center" id="time">Press the button once to start and again to stop the timer, shortest time wins</p><p class="inline small" id="unit"></p></div>
+
+<div class="center">
+    <input type="button" class="button" onclick="game()" value="Start">
+    <p id="best"></p>
+</div>
+</body>
+</html>

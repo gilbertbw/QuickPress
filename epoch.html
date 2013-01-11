@@ -1,0 +1,28 @@
+<html>
+<head>
+    <!--Load Jqueary and Moment-->
+    <script type="text/javascript" src="jqueary.js"></script>
+    <script type="text/javascript" src="moment.js"></script>
+    <link type="text/css" href="main.css" rel="stylesheet">
+    <script type="text/javascript">
+        var i = 0;
+        function refresh(){
+            var day = moment();
+            console.log(i);
+            $("#epoch").text(day.valueOf());
+            i++;
+        };
+        window.onload = function(){
+            refresh()
+        };
+    </script>
+</head>
+<body>
+<p class="center">It has been</p>
+<p class="large center" id="epoch">Test</p>
+<p class="center">milliseconds since the unix epoch</p>
+<div class="center">
+<input class="center button" type="button" value="Refresh" onclick="refresh();" >
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+p{
+    font-size: 2cm;
+}
+.center{
+    text-align: center;
+    margin: 0 auto;
+}
+.red{
+    color: red;
+}
+#epoch{
+    color: red;
+}
+.button{
+    width: 5cm;
+    height: 2cm;
+    font-size: 1cm;
+}
+.inline{
+    display: inline;
+}
+.small{
+    font-size: 0.75cm;
+}
